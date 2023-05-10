@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewData["Title"] = "HomeScreenPatient";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            background-color: #7289da;
+            color: white;
+        }
+
+        /* Slider styling */
+        .slider-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 50%;
+            height: 10px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+            .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: #ccc; /* change the background color to grey */
+                cursor: pointer;
+            }
+
+            .slider::-moz-range-thumb {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: #ccc; /* change the background color to grey */
+                cursor: pointer;
+            }
+
+        .slider-value {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        #weight {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>@ViewData["Title"]</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        <label for="symptoms">Please describe your symptoms:</label><br />
+        <textarea id="symptoms" name="symptoms" rows="4" cols="50"></textarea><br /><br />
+        <label for="temperature">Temperature:</label>
+        <div class="slider-container">
+            <input type="range" min="0" max="100" value="50" class="slider" id="temperature" name="temperature">
+            <span class="slider-value">50</span>
+        </div>
+        <br />
+        <label for="weight">Weight:</label>
+        <div class="slider-container">
+            <input type="range" min="0" max="300" value="150" class="slider" id="weight" name="weight">
+            <span class="slider-value">150</span>
+        </div>
+        <br />
+        <label for="image">Upload an image:</label><br />
+        <input type="file" id="image" name="image"><br /><br />
+        <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+        // Update slider value display for temperature
+        const temperatureSlider = document.getElementById("temperature");
+        const temperatureSliderValue = document.querySelector("#temperature + .slider-value");
+
+        temperatureSliderValue.textContent = temperatureSlider.value;
+
+        temperatureSlider.addEventListener("input", function () {
+            temperatureSliderValue.textContent = this.value;
+        });
+
+        // Update slider value display for weight
+        const weightSlider = document.getElementById("weight");
+        const weightSliderValue = document.querySelector("#weight + .slider-value");
+
+        weightSliderValue.textContent = weightSlider.value;
+
+        weightSlider.addEventListener("input", function () {
+            weightSliderValue.textContent = this.value;
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        /* Custom styles */
+        .jumbotron {
+            background-color: #424549;
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .lead {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+            .btn-primary:hover {
+                color: #fff;
+                background-color: #0062cc;
+                border-color: #005cbf;
+            }
+
+        body {
+            background-color: #7289da;
+            color: white;
+        }
+        /* Other styles */
+        /* ... */
+    </style>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">DigiCare</h1>
+        <p class="lead">This app is designed for clinics and healthcare professionals.</p>
+        <hr class="my-4">
+        <p>It provides a range of features to help clinics manage their appointments, communicate with patients, and keep track of patient records.</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>About Us</h2>
+                <p>We are a team of developers passionate about creating technology that can improve healthcare.</p>
+                <h2>Our Services</h2>
+                <p>Our app is designed to help clinics manage their appointments, communicate with patients, and keep track of patient records.</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or would like to learn more about our app, please feel free to contact us:</p>
+                <ul>
+                    <li>Email: info@clinicmanagementsystem.com</li>
+                    <li>Phone: 1-800-555-1234</li>
+                    <li>Address: 123 Main St, Suite 100, Anytown, USA</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container">
+        <p>&copy; Clinic-Management-System 2023</p>
+    </footer>
+</body>
+</html>

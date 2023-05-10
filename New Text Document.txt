@@ -1,0 +1,15 @@
+ [Authorize(Roles = "Admin")] // Only users with the "Admin" role can access this action
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null || _context.BookingLead == null)
+            {
+                return NotFound();
+            }
+
+            var bookingLeadEntity = await _context.BookingLead.FindAsync(id);
+            if (bookingLeadEntity == null)
+            {
+                return NotFound();
+            }
+            return View(bookingLeadEntity);
+        }
